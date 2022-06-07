@@ -9,6 +9,7 @@ function lifeInWeeks(age) {
     var weeks = (maxYear*52)-(age*52)
     var months = (maxYear*12)-(age*12)
 
+    document.getElementById('sentence').innerHTML = `If you lived till ${maxYear} years old.`
     document.getElementById('years').innerHTML = `${years} years`
     document.getElementById('months').innerHTML = `${months} months`
     document.getElementById('weeks').innerHTML = `${weeks} weeks`
