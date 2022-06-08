@@ -1,7 +1,9 @@
-let units = ''
+let units = 'LBS'
 let userHeight = ''
 let userWeight = ''
 let bmi = ''
+let length = ''
+let weight = ''
 
 const promptUnit = document.getElementById("unit");
 promptUnit.addEventListener("click" , askUnits);
@@ -14,34 +16,28 @@ function askUnits() {
     document.getElementById("units").innerHTML = `You are using ${units}`
 }
 
-console.log(units)
-
 function askHeightWeight() {
     if (units == "LBS") {
-        userHeight = parseFloat(prompt("What is your height in Inches?"))*0.0254;
-        userWeight = parseFloat(prompt("What is your weight in LBS?"))*0.45359237;
-        console.log(userHeight,userWeight, "lbs")
+        length = 'Inches'
+        weight = 'lbs'
+        userHeight = parseFloat(prompt("What is your height in Inches?"));
+        userWeight = parseFloat(prompt("What is your weight in LBS?"));
+        convertedHeight = userHeight*0.0254
+        convertedWeight = userWeight*0.45359237
+        bmi = parseFloat((convertedWeight/convertedHeight**2).toFixed(1))
+        console.log(typeof bmi)
     } else if (units == "KG") {
-        userHeight = parseInt(prompt("What is your height in Meters?"));
-        userWeight = parseInt(prompt("What is your weight in KGs?"));
-        console.log(userHeight, userWeight,"kg")
+        length = 'Meters'
+        weight = 'KGs'
+        userHeight = parseFloat(prompt("What is your height in Meters?"));
+        userWeight = parseFloat(prompt("What is your weight in KGs?"));
+        bmi = parseFloat((userWeight/userHeight**2).toFixed(1))
+        console.log(typeof bmi)
     }
 
-    document.getElementById("height").innerHTML = `Your height is ${userHeight}`
-    document.getElementById("weight").innerHTML = `Your weight is ${userWeight}`
-
-    bmi = userWeight/userHeight**2
+    document.getElementById("height").innerHTML = `Your height is ${userHeight} ${length}`
+    document.getElementById("weight").innerHTML = `Your weight is ${userWeight} ${weight}`
     document.getElementById("bmiString").innerHTML = `Your BMI is ${bmi}`
 }
 
-
-
-
-
-
 //bmi formula = weight/(heigh^2)
-
-function bmiCalculator(height, weight) {
-    userHeight = w
-    bmi = weight/height**2
-}
