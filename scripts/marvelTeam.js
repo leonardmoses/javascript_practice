@@ -13,19 +13,25 @@ function changeTeamName() {
 let charListUL = document.querySelector('#charList')
 
 function addCharacter() {
-    let node = document.createElement("li")
+    let listNode = document.createElement("li")
     let textNode = document.createTextNode(document.getElementById('inputType').value)
-    node.appendChild(textNode)
-    charListUL.appendChild(node)
+    listNode.appendChild(textNode)
+    charListUL.appendChild(listNode)
     document.getElementById('inputType').value = ''
 }
 
 function submitTeam() {
     const charItems = document.querySelectorAll('li')
-    charItems.className = "charClass"
-    console.log(charItems)
-
+    const team = []
     for (let i=0; i<charItems.length; i++) {
-        document.createElement('h3')
+        team.push(charItems[i].innerHTML)
     }
+    
+    let lastMember = team.pop()
+    let newH3 = document.createElement('h3')
+    
+    newH3.innerHTML = `Your Marvel Team name is the ${teamName.innerHTML} and your members are ${team.join(', ')}, and ${lastMember}.`
+    document.body.appendChild(newH3)
+
+    console.log(newH3.innerHTML)
 }
