@@ -1,4 +1,4 @@
-let range = 7
+let range = 0
 let fibArray = []
 let fibDisplay = document.getElementById('fibSequence')
 
@@ -13,7 +13,7 @@ btnGenerate.addEventListener('click', runSequence)
 document.getElementById('headerRange').innerHTML = `Your Range is ${range} Numbers`
 
 function changeRange() {
-    range = prompt('How many numbers do you want in your sequence?')
+    range = parseInt(prompt('How many numbers do you want in your sequence?'))
     document.getElementById('headerRange').innerHTML = `Your Range is ${range} Numbers`
     console.log(`Range is ${range} numbers.`)
     runSequence(range)
@@ -21,12 +21,14 @@ function changeRange() {
 
 function runSequence(n) {
     
-    fibArray = [0,1]
+    fibArray = [0, 1]
     let last1
     let last2
     let lastNew
 
-    if (n===1) {
+    if (n===0) {
+        fibArray = []
+    } else if (n===1) {
         fibArray = [0]
     } else if (n===2) {
         fibArray = [0,1]
@@ -39,8 +41,9 @@ function runSequence(n) {
             fibArray.push(lastNew)
         }
     }
-    fibDisplay.innerHTML = fibArray;
-    return fibArray;
+    console.log(n)
+    console.log(fibArray)
+    fibDisplay.innerHTML = `${fibArray.join(', ')}`
 }
 
-fibDisplay.innerHTML = fibArray;
+// fibDisplay.innerHTML = fibArray;
