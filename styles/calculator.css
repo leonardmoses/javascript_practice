@@ -1,0 +1,25 @@
+html {
+    background-color: rgb(69, 69, 69);
+}
+
+body {
+    background-color: blue;
+    width: 100%;
+}
+
+#title {
+    background-color: antiquewhite;
+    width: 30%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+#calcBody {
+    background-color: rgb(212, 212, 212);
+    margin: 20px auto;
+    width: 50%;
+    height: 100px;
+    border: 1px black solid;
+    border-radius: 10px;
+}
+
