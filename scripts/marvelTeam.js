@@ -12,13 +12,26 @@ function changeTeamName() {
 
 let charListUL = document.querySelector('#charList')
 
+// function addCharacter() {
+//     let listNode = document.createElement("li")
+//     let textNode = document.createTextNode(document.getElementById('inputType').value)
+//     listNode.appendChild(textNode)
+//     charListUL.appendChild(listNode)
+//     document.getElementById('inputType').value = ''
+// }
+
+let btnAdd = document.querySelector('btnAdd')
+btnAdd.addEventListener('click' , addCharacter)
+
 function addCharacter() {
-    let listNode = document.createElement("li")
-    let textNode = document.createTextNode(document.getElementById('inputType').value)
-    listNode.appendChild(textNode)
-    charListUL.appendChild(listNode)
-    document.getElementById('inputType').value = ''
+    if (document.querySelector('#inputType').value.length == 0) {
+        alert('Enter a Name')
+    } else {
+        
+    }
+    
 }
+
 
 function submitTeam() {
     const charItems = document.querySelectorAll('li')
