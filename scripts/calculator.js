@@ -2,7 +2,7 @@
 
 let num1 = 0
 let num2 = 0
-let sum = 0
+let sum = null
 const numArray = []
 
 // creating equals buttons
@@ -43,6 +43,7 @@ function btnPress() {
 
 function add(args) {
     console.log(args)
+    sum = 0
     for (let i=0; i<args.length; i++) {
         sum += args[i]
     }
@@ -60,6 +61,7 @@ function subtract(args) {
 }
 
 function multiply(args) {
+    sum = [1]
     for (let i=0; i<args.length; i++) {
         sum *= args[i]
     }
@@ -67,6 +69,9 @@ function multiply(args) {
 }
 
 function divide(args) {
+    sum = args[0]
+    console.log(sum)
+    console.log(args)
     for (let i=0; i<args.length; i++) {
         sum /= args[i]
     }
