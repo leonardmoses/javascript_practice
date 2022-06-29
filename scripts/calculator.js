@@ -5,9 +5,11 @@ let num2 = 0
 let sum = null
 const numArray = []
 
+let btnAdd = document.querySelector('#btnAdd')
+
 // creating equals buttons
 let inputEnter = document.querySelector('#btnEnter')
-inputEnter.addEventListener('click', btnPress)
+inputEnter.addEventListener('click', conCat)
 
 //creating display screen area
 let display = document.querySelector('#display')
@@ -19,27 +21,40 @@ let btnNum1 = document.querySelectorAll('.btnNum')
 for (let i=0; i<btnNum1.length; i++) {
     btnNum1[i].addEventListener('click', (e)=>{
         display.innerHTML = e.target.innerHTML;
-        numArray.push(parseInt(e.target.innerHTML))
-        num1 = numArray[0]
-        num2 = numArray[1]
-        console.log(numArray)
-        console.log(num1)
-        console.log(num2)
+        numArray.push(e.target.innerHTML)
+        numArray.join()
+        
     })
 }
 
-//click event for buttons operators
-let btnOperator = document.querySelectorAll('.btnOperator')
-for (let i=0; i<btnOperator.length; i++) {
-    btnOperator[i].addEventListener('click', (e)=>{
-        display.innerHTML = e.target.innerHTML
-    })
+
+
+function conCat() {
+    numArray.join()
+    console.log(numArray)
+
 }
 
-//function to display when button is clicked
+
+// //click event for buttons operators
+// let btnOperator = document.querySelectorAll('.btnOperator')
+// for (let i=0; i<btnOperator.length; i++) {
+//     btnOperator[i].addEventListener('click', (e)=>{
+//         display.innerHTML = e.target.innerHTML
+//         numArray.join()
+//     })
+
+// }
+
+//function for display when button is clicked
 function btnPress() {
     display.innerHTML = document.querySelector('.btnNum').innerHTML
 }
+
+
+
+
+/*
 
 function add(args) {
     console.log(args)
@@ -80,4 +95,6 @@ function divide(args) {
 function calculator(operator, ...args) {
     return operator(args)
 }
+
+*/
 
