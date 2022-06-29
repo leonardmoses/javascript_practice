@@ -70,12 +70,11 @@ function multiply(args) {
 
 function divide(args) {
     sum = args[0]
-    console.log(sum)
-    console.log(args)
     for (let i=0; i<args.length; i++) {
         sum /= args[i]
+        
     }
-    return sum
+    return sum*args[0]
 }
 
 function calculator(operator, ...args) {
